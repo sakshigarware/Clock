@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Clock</title>
+    <!-- <link rel="stylesheet" href="Clock.css"> -->
+    <style>
+      
+*{
+    font-family: sans-serif;
+    
+}
+.bd{
+    position: relative,fixed;
+    background-image: url(https://media.licdn.com/dms/image/D4E12AQEor_pP6cx5tg/article-cover_image-shrink_720_1280/0/1696250299583?e=2147483647&v=beta&t=9_0P8xsYJ6GBNT4KISn9kqCd0e86XZ_7i_T2a87wgXo)
+}
+
+.Clockmain{
+    box-shadow: 0px 0px 10px whitesmoke;
+    position: absolute,fixed;
+    z-index: 1;
+    margin-left: 433PX;
+    margin-top: 303PX;
+    height: 76px;
+    width: 85px;
+    align-items: baseline;
+    align-content: baseline;
+    justify-content: center;
+    /* background-image: url(https://w0.peakpx.com/wallpaper/131/156/HD-wallpaper-apple-watch-fabric-black.jpg); */
+    background-image: url(https://img.freepik.com/free-photo/empty-dark-room-modern-futuristic-sci-fi-background-3d-illustration_35913-2332.jpg?size=626&ext=jpg&ga=GA1.1.735520172.1710979200&semt=ais);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 60%; 
+    /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Computer-screen-code-glitch-animation-gif-background-free.gif/1200px-Computer-screen-code-glitch-animation-gif-background-free.gif); */
+    color:rgb(241, 235, 227);
+    padding: 25px;
+    border-radius: 35px;
+    border: 1PX solid white;
+    background-position: static;
+    text-align: center;
+    transform: rotate(1deg);
+    border-top-left-radius: 37px;
+    border-bottom-right-radius: 37px;
+
+}
+
+.dis{
+    margin-top: 50px;
+   align-items: center;
+   align-content: baseline;
+   color: white;
+   text-underline-position: below;
+   
+}
+    </style>
+</head>
+<body class="bd">
+    <div class="Clockmain">
+        <p class="dis">
+        <span id="hr" ></span>:
+        <span id="min" ></span>:
+        <span id="sec" ></span>
+    </p>
+
+    </div>
+    <script>
+        let hour=document.getElementById("hr");
+        let min=document.getElementById("min");
+        let sec=document.getElementById("sec");
+
+        function updateTime() {
+            let tm =new Date();
+            let hr=tm.getHours();
+            let mn=tm.getMinutes();
+            let sc=tm.getSeconds();
+            if (hr>12) {
+                hour.innerHTML=hr-12;
+                min.innerHTML=mn;
+                sec.innerHTML=sc+'pm';
+            } else {
+                hour.innerHTML=hr;
+                min.innerHTML=mn;
+                sec.innerHTML=sc+'am';
+            }
+            
+            
+        }
+        setInterval(updateTime,1000)
+
+    </script>
+    
+</body>
+</html>
